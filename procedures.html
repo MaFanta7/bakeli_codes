@@ -1,0 +1,53 @@
+<script>
+	var iHeures, iMinutes, iSecondes;
+	function affiche_heure(){
+		var d= new Date();
+		do{
+			iHeures = Number(prompt("Veuillez saisir l'heure: "));
+		}
+		while(iHeures>23);
+		do{
+			iMinutes = Number(prompt("Veuillez saisir la minute "));
+		}
+		while(iMinutes>59);
+		do{
+			iSecondes = Number(prompt("Veuillez saisir la seconde "));
+		}
+		while(iSecondes>59);
+		
+		document.write("Il est " +iHeures +" heures(s) " +iMinutes+ " minutes(s) " + iSecondes +" seconde(s)");
+		document.write("<br>");
+	}
+	function saisir_heure(iH, iM, iS){
+		iH= iHeures;
+		iM= iMinutes;
+		iS= iSecondes;
+	}
+	function tick(){
+		var d=new Date();
+
+		//document.write("L'heure incrémentée d'une seconde " );
+		if(iSecondes==59 && iMinutes<59){
+			document.write("L'heure incrémentée d'une seconde " +iHeures +" heures(s) " +(iMinutes+1) + " minutes(s) 00 seconde(s)");
+
+		}
+		else if (iSecondes==59 && iMinutes==59){
+			document.write("L'heure incrémentée d'une seconde " +(iHeures+1) +" heures(s) 00 minutes(s) 00 seconde(s)");
+		}
+		else{
+			document.write("L'heure incrémentée d'une seconde " +iHeures +" heures(s) " +iMinutes+" minutes(s) "+(iSecondes+1)+ " seconde(s)");
+		}
+		
+			
+
+	}
+	function main(){
+		saisir_heure();
+		 affiche_heure();
+		 tick();
+
+	}
+	main();
+   ;
+   
+</script>
